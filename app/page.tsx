@@ -91,7 +91,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="hide-scrollbar mb-[40%]">
+      <div className="mb-[25%]">
         <ScrollMenu>
           {cardItems.map((_, index) => (
             <div key={index} className="card mx-4">
