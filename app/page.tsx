@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Profile from "../Assets/Group.png";
+import Profile from "../public/assets/profile.png";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
-import Email from "../Assets/Last page pic/email_12868600.png";
-import Phone from "../Assets/Last page pic/telephone.png";
-import Linkedin from "../Assets/Last page pic/logo_12868806.png";
+import Email from "../public/assets/contacts/email.png";
+import Phone from "../public/assets/contacts/phone.png";
+import Linkedin from "../public/assets/contacts/linkedin.png";
+import Cards from "../public/assets/card.png"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,25 +24,24 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-[90%] m-auto mb-[30%]">
+    <div className="w-[90%] m-auto mb-[10%]">
 
-<header
-  className={`${
-    isScrolled
-      ? "bg-blue-900/40 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3"
-      : "w-[85%]"
-  } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
->
-  <h1 className="text-3xl text-white p-2">Portfolio</h1>
+        <header
+          className={`${
+            isScrolled
+              ? "bg-blue-900/40 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3"
+              : "w-[85%]"
+          } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
+        >
+          <h1 className="text-3xl text-white p-2">Portfolio</h1>
 
-  <div className="text-xl space-x-10 text-white p-2">
-    <span>About</span>
-    <span>Projects</span>
-    <span>Contact</span>
-    <span>Resume</span>
-  </div>
-</header>
-
+          <div className="text-xl space-x-10 text-white p-2">
+            <span>About</span>
+            <span>Projects</span>
+            <span>Contact</span>
+            <span>Resume</span>
+          </div>
+        </header>
 
 
       <div className="text-white">
@@ -97,9 +97,9 @@ export default function Home() {
             <div key={index} className="card mx-4">
               <div className="cursor-pointer group relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
                 <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-                  <img
+                  <Image
                     className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
-                    src="https://images.unsplash.com/photo-1496436818536-e239445d3327?q=80&w=1200"
+                    src={Cards}
                     alt={`Card ${index}`}
                   />
                 </div>
@@ -160,14 +160,14 @@ export default function Home() {
           <p className="text-7xl">LET'S START NOW</p>
         </div>
 
-        <div className="m-[10%] space-y-3 text-center">
+        <div className="mt-[10%] space-y-2 text-center">
           <p>Huge thanks for visiting my website</p>
           <p>Hope we can work as soon as possible</p>
           <p>
             Feel free to reach me for everything that comes to your mind about
             my work
           </p>
-          <p className="pt-5">Created by ali.sheikhbahaie84@gmail.com</p>
+          <p className="pt-10">Created by ali.sheikhbahaie84@gmail.com</p>
         </div>
       </div>
     </div>
