@@ -10,22 +10,22 @@ const MorePage = () => {
   return (
     <div className="w-[90%] m-auto mb-[10%]">
       
-      <div className='text-lg'>
-          <div className="relative w-96 h-80 mt-6">
+      <div className='text-2xl'>
+          <div className="relative w-[500px] h-[420px] mt-6">
             <Image
               src={Vector1}
               alt="Description"
-              className="absolute"
+              className="absolute animate-orbit-slow"
             />
             <Image
               src={Vector2}
               alt="Description"
-              className="absolute"
+              className="absolute animate-orbit-slow-reverse"
             />
-              <Image
+            <Image
               src={More}
               alt="Description"
-              className="absolute w-[365px] m-3"
+              className="absolute w-[470px] h-[330px] m-3"
             />
           </div>
 
