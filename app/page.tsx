@@ -61,7 +61,7 @@ export default function Home() {
 
       <header
         className={`${ isScrolled
-            ? "bg-blue-900/40 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3"
+            ? "bg-blue-950/60 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3 h-12"
             : "w-[85%]"
         } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
       >
@@ -95,16 +95,16 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="text-white mb-[30%]">
+      <div className="text-white">
         <p className="mt-[15%] ml-[25%]">I'M</p>
-        <div className="mt-[10%] ml-[60%] mb-[30%] flex">
+        <div className="mt-[10%] ml-[60%] mb-[25%] flex">
           <p className="text-sm mr-[5px]">A MOTION</p>
           <p className="text-3xl"> DESIGNER</p>
         </div>
       </div>
       
       <div>
-        <div id="about" className="flex justify-center space-x-36 mb-[30%]">
+        <div id="about" className="flex justify-center space-x-36 mb-[10%]">
           <div className="text-2xl">
             <p>
               Hello, everyone! I'm Mohammad, and I'm excited to <br />
@@ -144,11 +144,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="projects" className="mb-[30%] relative">
+      <div id="projects" className="mb-[10%] relative">
         <div className="swiper-container-wrapper">
           <Swiper
-            spaceBetween={20}
-            slidesPerView={3}
+            spaceBetween={15}
+            slidesPerView={4}
             centeredSlides={false}
             grabCursor={true}
             pagination={{
@@ -157,13 +157,13 @@ export default function Home() {
               el: ".custom-pagination",
             }}
             loop={true}
-            autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 2000 }}
             modules={[Pagination, Autoplay]}
             className="mySwiper"
           >
             {cardItems.map((_, index) => (
-              <SwiperSlide key={index} className="mx-4">
-                <div className="cursor-pointer relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-[345px] hover:shadow-lg transition-shadow duration-300">
+              <SwiperSlide key={index} className="mx-2">
+                <div className="cursor-pointer relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-[280px] hover:shadow-lg transition-shadow duration-300">
                   <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                     <Image
                       className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -227,17 +227,17 @@ export default function Home() {
         </div>
 
         <div>
-          <p className="text-7xl">LET'S START NOW</p>
+          <p className="text-6xl">LET'S START NOW</p>
         </div>
 
-        <div className="absolute mt-[450px] space-y-2 text-center w-full pb-5 pt-5">
+        <div className="absolute mt-[430px] space-y-2 text-center w-full pb-4 pt-4">
           <div className="absolute inset-0 bg-slate-900 opacity-60 pointer-events-none"></div>
           <p className="relative z-10">Huge thanks for visiting my website</p>
           <p className="relative z-10">Hope we can work as soon as possible</p>
           <p className="relative z-10">
             Feel free to reach me for everything that comes to your mind about my work
           </p>
-          <p className="relative z-10 pt-10">Created by ali.sheikhbahaie84@gmail.com</p>
+          <p className="relative z-10">Created by ali.sheikhbahaie84@gmail.com</p>
         </div>
       </div>
     </div>

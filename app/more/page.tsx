@@ -8,9 +8,9 @@ import Vector2 from "../../public/assets/pictures/more/Vector2.png";
 
 const MorePage = () => {
   return (
-    <div className="w-[90%] m-auto mb-[10%]">
+    <div className="w-[85%] m-auto mb-[10%]">
       
-      <div className='text-2xl'>
+      <div className='text-2xl mt-20'>
           <div className="relative w-[500px] h-[420px] mt-6">
             <Image
               src={Vector1}
