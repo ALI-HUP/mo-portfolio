@@ -2,13 +2,16 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Profile from "../public/assets/profile.png";
-import { ScrollMenu } from "react-horizontal-scrolling-menu";
+import Profile from "../public/assets/pictures/profile.png";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import Email from "../public/assets/contacts/email.png";
 import Phone from "../public/assets/contacts/phone.png";
 import Linkedin from "../public/assets/contacts/linkedin.png";
 import Cards from "../public/assets/card.png"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,8 +30,7 @@ export default function Home() {
     <div className="w-[90%] m-auto mb-[10%]">
 
         <header
-          className={`${
-            isScrolled
+          className={`${ isScrolled
               ? "bg-blue-900/40 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3"
               : "w-[85%]"
           } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
@@ -44,7 +46,7 @@ export default function Home() {
         </header>
 
 
-      <div className="text-white">
+      <div className="text-white mb-[30%]">
         <p className="mt-[15%] ml-[25%]">I'M</p>
         <div className="mt-[10%] ml-[60%] mb-[30%] flex">
           <p className="text-sm mr-[5px]">A MOTION</p>
@@ -71,7 +73,7 @@ export default function Home() {
             crucial, as it allowed me to gain both the necessary <br />
             skills and an understanding of how the industry <br />
             works.
-            <a href="" className="text-red-500 underline p-1">
+            <a href="/more" className="text-red-500 underline p-1">
               more
             </a>
           </p>
@@ -91,11 +93,22 @@ export default function Home() {
         />
       </div>
 
-      <div className="mb-[25%]">
-        <ScrollMenu>
+      <div className="mb-[30%] relative">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={3}
+          centeredSlides={false}
+          grabCursor={true}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
           {cardItems.map((_, index) => (
-            <div key={index} className="card mx-4">
-              <div className="cursor-pointer group relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+            <SwiperSlide key={index} className="mx-4">
+              <div className="cursor-pointer relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
                 <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                   <Image
                     className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -115,20 +128,20 @@ export default function Home() {
                 </div>
                 <div className="px-4 pb-4 pt-0 mt-2"></div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </ScrollMenu>
+        </Swiper>
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="flex space-x-56 mb-[15%]">
+        <div className="flex space-x-56 mb-[10%]">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
                 src={Email}
                 alt="Email-Pic"
-                className="p-3 w-40 h-40 border rounded-2xl"
+                className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
           </div>
@@ -139,7 +152,7 @@ export default function Home() {
               <Image
                 src={Phone}
                 alt="Phone-Pic"
-                className="p-3 w-40 h-40 border rounded-2xl"
+                className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
           </div>
@@ -150,7 +163,7 @@ export default function Home() {
               <Image
                 src={Linkedin}
                 alt="Linkedin-Pic"
-                className="p-3 w-40 h-40 border rounded-2xl"
+                className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
           </div>
