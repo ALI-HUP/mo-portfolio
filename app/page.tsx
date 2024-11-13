@@ -2,20 +2,25 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Profile from "../public/assets/pictures/profile.png";
+import Profile from "../public/assets/pictures/profile/profile.png";
+import Vector1 from "../public/assets/pictures/profile/Vector1.png";
+import Vector2 from "../public/assets/pictures/profile/Vector2.png";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import Email from "../public/assets/contacts/email.png";
 import Phone from "../public/assets/contacts/phone.png";
 import Linkedin from "../public/assets/contacts/linkedin.png";
-import Cards from "../public/assets/card.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   const cardItems = [1, 2, 3, 4, 5, 6];
 
   useEffect(() => {
@@ -54,6 +59,16 @@ export default function Home() {
         behavior: "smooth",
       });
     }
+  };
+
+  const handleCopy = (text: string, message: React.SetStateAction<string>) => {
+    navigator.clipboard.writeText(text);
+    setSnackbarMessage(message);
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -97,6 +112,25 @@ export default function Home() {
 
       <div className="text-white">
         <p className="mt-[15%] ml-[25%]">I'M</p>
+
+        {/* <div className="flex justify-center my-4">
+          <video
+            src="/assets/mo1.mov"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-[60%] rounded-lg shadow-lg transition-all duration-700 ease-in-out"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 10,
+            }}
+          />
+        </div> */}
+
         <div className="mt-[10%] ml-[60%] mb-[25%] flex">
           <p className="text-sm mr-[5px]">A MOTION</p>
           <p className="text-3xl"> DESIGNER</p>
@@ -136,11 +170,23 @@ export default function Home() {
             </p>
           </div>
 
-          <Image
-            src={Profile}
-            alt="Description"
-            className="rounded-full w-96 h-96"
-          />
+          <div className="relative w-[500px] h-[500px]">
+            <Image
+              src={Vector1}
+              alt="Description"
+              className="absolute w-[490px] h-[490px] animate-orbit-slow"
+            />
+            <Image
+              src={Vector2}
+              alt="Description"
+              className="absolute w-[490px] h-[490px] animate-orbit-slow-reverse"
+            />
+            <Image
+              src={Profile}
+              alt="Description"
+              className="absolute w-[480px] h-[480px] m-1 rounded-full"
+            />
+          </div>
         </div>
       </div>
 
@@ -162,37 +208,24 @@ export default function Home() {
             className="mySwiper"
           >
             {cardItems.map((_, index) => (
-              <SwiperSlide key={index} className="mx-2">
-                <div className="cursor-pointer relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-[280px] hover:shadow-lg transition-shadow duration-300">
-                  <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-                    <Image
-                      className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
-                      src={Cards}
-                      alt={`Card ${index + 1}`}
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h6 className="mb-2 text-slate-800 text-xl font-semibold">
-                      Successful Seed Round {index + 1}
+              <SwiperSlide key={index} className="mx-1">
+                <div className="w-[320px] h-[490px] cursor-pointer relative flex flex-col bg-gradient-to-r from-indigo-950 to-sky-950 opacity-90 rounded-lg justify-center items-center">
+                  <div className="text-white text-center p-4">
+                    <h6 className="text-xl font-semibold text-orange-200">
+                      Successful Round {index + 1}
                     </h6>
-                    <p className="text-slate-600 leading-normal font-light">
-                      We are thrilled to announce the completion of our seed
-                      round, securing $2M in investment to fuel product
-                      development and market expansion.
-                    </p>
                   </div>
-                  <div className="px-4 pb-4 pt-0 mt-2"></div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="custom-pagination mt-4"></div>
+          <div className="custom-pagination mt-5"></div>
         </div>
       </div>
 
       <div id="contact" className="flex flex-col items-center">
         <div className="flex space-x-56 mb-[10%]">
-          <div className="relative">
+          <div className="relative" onClick={() => handleCopy("ali.sheikhbahaie84@gmail.com", "Email copied!")}>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
@@ -203,7 +236,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative" onClick={() => handleCopy("123-456-7890", "Phone number copied!")}>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
@@ -214,7 +247,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative" onClick={() => handleCopy("https://linkedin.com/in/yourprofile", "LinkedIn link copied!")}>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
@@ -225,6 +258,17 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <Snackbar
+          open={snackbarOpen}
+          autoHideDuration={3000}
+          onClose={handleSnackbarClose}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        >
+          <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
 
         <div>
           <p className="text-6xl">LET'S START NOW</p>
