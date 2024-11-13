@@ -11,16 +11,14 @@ import Phone from "../public/assets/contacts/phone.png";
 import Linkedin from "../public/assets/contacts/linkedin.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import Snackbar from "@mui/material/Snackbar";
-import Alert from "@mui/material/Alert";
+import { ToastContainer, ToastContentProps, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
   const cardItems = [1, 2, 3, 4, 5, 6];
 
   useEffect(() => {
@@ -61,14 +59,15 @@ export default function Home() {
     }
   };
 
-  const handleCopy = (text: string, message: React.SetStateAction<string>) => {
+  const handleCopy = (text: string, message: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | Promise<React.AwaitedReactNode> | ((props: ToastContentProps<unknown>) => React.ReactNode) | null | undefined) => {
     navigator.clipboard.writeText(text);
-    setSnackbarMessage(message);
-    setSnackbarOpen(true);
-  };
-
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
+    toast.success(message, {
+      position: "bottom-left",
+      autoClose: 3000,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
   };
 
   return (
@@ -224,8 +223,8 @@ export default function Home() {
       </div>
 
       <div id="contact" className="flex flex-col items-center">
-        <div className="flex space-x-56 mb-[10%]">
-          <div className="relative" onClick={() => handleCopy("ali.sheikhbahaie84@gmail.com", "Email copied!")}>
+        <div className="flex space-x-56 mb-24">
+          <div className="relative" onClick={() => handleCopy("sheikhbahaie.md@gmail.com", "Email address copied!")}>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
@@ -236,7 +235,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative" onClick={() => handleCopy("123-456-7890", "Phone number copied!")}>
+          <div className="relative" onClick={() => handleCopy("09912618098", "Phone number copied!")}>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
@@ -247,7 +246,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative" onClick={() => handleCopy("https://linkedin.com/in/yourprofile", "LinkedIn link copied!")}>
+          <a href="https://www.linkedin.com/in/mohammad-sheikhbahaei-1824a82a5" target="_blank" rel="noopener noreferrer" className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
             <div className="relative z-10">
               <Image
@@ -256,25 +255,16 @@ export default function Home() {
                 className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
-          </div>
+          </a>
         </div>
 
-        <Snackbar
-          open={snackbarOpen}
-          autoHideDuration={3000}
-          onClose={handleSnackbarClose}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        >
-          <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
+        <ToastContainer />
 
         <div>
           <p className="text-6xl">LET'S START NOW</p>
         </div>
 
-        <div className="absolute mt-[430px] space-y-2 text-center w-full pb-4 pt-4">
+        <div className="absolute mt-[400px] space-y-1 text-center w-full pb-3 pt-3">
           <div className="absolute inset-0 bg-slate-900 opacity-60 pointer-events-none"></div>
           <p className="relative z-10">Huge thanks for visiting my website</p>
           <p className="relative z-10">Hope we can work as soon as possible</p>
