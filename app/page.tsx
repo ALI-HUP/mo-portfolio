@@ -16,6 +16,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Modal, Box, Button } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,9 +79,9 @@ export default function Home() {
 
       <header
         className={`${isScrolled
-          ? "bg-blue-950/60 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3 h-12"
+          ? "bg-blue-950/70 backdrop-blur-sm rounded-full shadow-xl w-[65%] items-center p-3 m-3 h-12"
           : "w-[85%]"
-        } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
+        } p-3 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-1000`}
       >
         <h1 className="text-3xl p-2">Portfolio</h1>
 
@@ -133,10 +135,28 @@ export default function Home() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            padding: "20px",
+            border: "1px solid white",
           }}
         >
-          <p id="resume-popup-description" style={{ fontSize: "18px", marginBottom: "25px" }}>
-            Click the button below to download my resume.
+          <Button
+            onClick={() => setOpen(false)}
+            sx={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              color: "white",
+              bgcolor: "transparent",
+              "&:hover": {
+                color: "rgb(37 99 235)",
+              },
+            }}
+          >
+            <CloseIcon />
+          </Button>
+
+          <p id="resume-popup-description" style={{ fontSize: "18px", marginBottom: "25px", color: "white" }}>
+            Click the button below to download my resume
           </p>
           <Button
             variant="contained"
@@ -157,9 +177,8 @@ export default function Home() {
         </Box>
       </Modal>
 
-
-      <div>
-        <p className="mt-[15%] ml-[25%]">I'M</p>
+      <div className="text-md mb-[25%]">
+        <p className="mt-[15%] ml-[20%]">I'M</p>
 
         {/* <div className="flex justify-center my-4">
           <video
@@ -179,8 +198,8 @@ export default function Home() {
           />
         </div> */}
 
-        <div className="mt-[10%] ml-[60%] mb-[25%] flex">
-          <p className="text-sm mr-[5px]">A MOTION</p>
+        <div className="mt-[10%] ml-[65%] flex">
+          <p className="mr-[5px]">A MOTION</p>
           <p className="text-3xl"> DESIGNER</p>
         </div>
       </div>
@@ -279,7 +298,7 @@ export default function Home() {
               <Image
                 src={Email}
                 alt="Email-Pic"
-                className="p-3 w-32 h-32 border rounded-2xl"
+                className="p-3 w-28 h-28 border rounded-2xl"
               />
             </div>
           </div>
@@ -290,7 +309,7 @@ export default function Home() {
               <Image
                 src={Phone}
                 alt="Phone-Pic"
-                className="p-3 w-32 h-32 border rounded-2xl"
+                className="p-3 w-28 h-28 border rounded-2xl"
               />
             </div>
           </div>
@@ -301,7 +320,7 @@ export default function Home() {
               <Image
                 src={Linkedin}
                 alt="Linkedin-Pic"
-                className="p-3 w-32 h-32 border rounded-2xl"
+                className="p-3 w-28 h-28 border rounded-2xl"
               />
             </div>
           </a>
@@ -314,7 +333,7 @@ export default function Home() {
         </div>
 
         <div className="absolute mt-[400px] space-y-1 text-center w-full pb-3 pt-3">
-          <div className="absolute inset-0 bg-slate-900 opacity-60 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-slate-900 opacity-70"></div>
           <p className="relative z-10">Huge thanks for visiting my website</p>
           <p className="relative z-10">Hope we can work as soon as possible</p>
           <p className="relative z-10">
