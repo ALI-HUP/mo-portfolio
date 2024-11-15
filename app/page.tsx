@@ -9,21 +9,27 @@ import "react-horizontal-scrolling-menu/dist/styles.css";
 import Email from "../public/assets/contacts/email.png";
 import Phone from "../public/assets/contacts/phone.png";
 import Linkedin from "../public/assets/contacts/linkedin.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
 import { ToastContainer, ToastContentProps, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Modal, Box, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import SwiperComponent from "../components/SwiperComponent";
 
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [open, setOpen] = useState(false);
-  const cardItems = [1, 2, 3, 4, 5, 6];
+  const cardItems = [
+    { title: "Animation" },
+    { title: "Video Editing" },
+    { title: "Motion Design" },
+    { title: "Design" },
+    { title: "Logo Motion" },
+    { title: "Logo" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -258,36 +264,7 @@ export default function Home() {
       </div>
 
       <div id="projects" className="mb-[10%] relative">
-        <div className="swiper-container-wrapper">
-          <Swiper
-            spaceBetween={15}
-            slidesPerView={4}
-            centeredSlides={false}
-            grabCursor={true}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-              el: ".custom-pagination",
-            }}
-            loop={true}
-            autoplay={{ delay: 2000 }}
-            modules={[Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            {cardItems.map((_, index) => (
-              <SwiperSlide key={index} className="mx-1">
-                <div className="w-[320px] h-[490px] cursor-pointer relative flex flex-col bg-gradient-to-r from-indigo-950 to-sky-950 opacity-90 rounded-2xl justify-center items-center">
-                  <div className=" text-center p-4">
-                    <h6 className="text-xl font-semibold text-orange-200">
-                      Successful Round {index + 1}
-                    </h6>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="custom-pagination mt-5"></div>
-        </div>
+      <SwiperComponent cardItems={cardItems} />
       </div>
 
       <div id="contact" className="flex flex-col items-center">
