@@ -10,23 +10,23 @@ import Signture from "../../public/more-page/signture.png";
 
 const MorePage = () => {
   return (
-      <div className="morepage-container w-[52%] m-[5%]">
+      <div className="morepage-container w-[52%] m-24">
         
-        <div className='text-2xl mt-20'>
+        <div className="text-2xl">
             <div className="relative w-[500px] h-[420px] mt-6">
               <Image
                 src={Vector1}
-                alt="Description"
+                alt="Vector"
                 className="absolute animate-orbit-slow"
               />
               <Image
                 src={Vector2}
-                alt="Description"
+                alt="Vector"
                 className="absolute animate-orbit-slow-reverse"
               />
               <Image
                 src={More}
-                alt="Description"
+                alt="Mo-pic"
                 className="absolute w-[470px] h-[330px] m-3"
               />
             </div>
@@ -70,7 +70,7 @@ const MorePage = () => {
                 York-based company, which has given me valuable experience in a <br />
                 professional setting.
                   <a href="/" className="text-red-500 underline p-1">
-                  back
+                  Back
                   </a>
               </p>
 

@@ -225,7 +225,7 @@ export default function Home() {
               skills and an understanding of how the industry <br />
               works.
               <a href="/more" className="text-red-500 underline p-1">
-                more
+                More
               </a>
             </p>
 
