@@ -13,7 +13,7 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({ cardItems }) => {
   return (
     <div className="swiper-container-wrapper">
       <Swiper
-        spaceBetween={15}
+        spaceBetween={10}
         slidesPerView={4}
         centeredSlides={false}
         grabCursor={true}
@@ -28,7 +28,7 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({ cardItems }) => {
         className="mySwiper"
       >
         {cardItems.map((item, index) => (
-          <SwiperSlide key={index} className="mx-1">
+          <SwiperSlide key={index}>
             <CardComponent title={item.title} />
           </SwiperSlide>
         ))}
