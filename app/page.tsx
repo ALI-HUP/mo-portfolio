@@ -79,9 +79,9 @@ export default function Home() {
             : "w-[85%]"
         } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
       >
-        <h1 className="text-3xl text-white p-2">Portfolio</h1>
+        <h1 className="text-3xl p-2">Portfolio</h1>
 
-        <div className="text-xl space-x-10 text-white p-2">
+        <div className="text-xl space-x-10 p-2">
           <span
             onClick={() => scrollToSection("about")}
             className={activeSection === "about" ? "text-red-500" : ""}
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="text-white">
+      <div>
         <p className="mt-[15%] ml-[25%]">I'M</p>
 
         {/* <div className="flex justify-center my-4">
@@ -209,7 +209,7 @@ export default function Home() {
             {cardItems.map((_, index) => (
               <SwiperSlide key={index} className="mx-1">
                 <div className="w-[320px] h-[490px] cursor-pointer relative flex flex-col bg-gradient-to-r from-indigo-950 to-sky-950 opacity-90 rounded-lg justify-center items-center">
-                  <div className="text-white text-center p-4">
+                  <div className=" text-center p-4">
                     <h6 className="text-xl font-semibold text-orange-200">
                       Successful Round {index + 1}
                     </h6>
