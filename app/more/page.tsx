@@ -10,7 +10,7 @@ import Signture from "../../public/more-page/signture.png";
 
 const MorePage = () => {
   return (
-      <div className="morepage-container w-[50%] m-[5%]">
+      <div className="morepage-container w-[52%] m-[5%]">
         
         <div className='text-2xl mt-20'>
             <div className="relative w-[500px] h-[420px] mt-6">
@@ -54,7 +54,7 @@ const MorePage = () => {
               <Image
                 src={Skills}
                 alt="Skills"
-                className="w-[900px] h-56"
+                className="w-[900px] h-48"
               />
             </div>
 

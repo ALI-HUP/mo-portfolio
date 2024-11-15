@@ -15,10 +15,12 @@ import { ToastContainer, ToastContentProps, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Modal, Box, Button } from "@mui/material";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [open, setOpen] = useState(false);
   const cardItems = [1, 2, 3, 4, 5, 6];
 
   useEffect(() => {
@@ -74,9 +76,9 @@ export default function Home() {
     <div className="w-[90%] m-auto">
 
       <header
-        className={`${ isScrolled
-            ? "bg-blue-950/60 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3 h-12"
-            : "w-[85%]"
+        className={`${isScrolled
+          ? "bg-blue-950/60 backdrop-blur-sm rounded-full shadow-lg w-[65%] items-center p-2 m-3 h-12"
+          : "w-[85%]"
         } p-2 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700`}
       >
         <h1 className="text-3xl p-2">Portfolio</h1>
@@ -101,13 +103,60 @@ export default function Home() {
             Contact
           </span>
           <span
-            onClick={() => scrollToSection("resume")}
+            onClick={() => setOpen(true)}
             className={activeSection === "resume" ? "text-red-500" : ""}
           >
             Resume
           </span>
         </div>
       </header>
+
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="resume-popup"
+        aria-describedby="resume-popup-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 500,
+            height: 200,
+            bgcolor: "rgb(15 23 42)",
+            boxShadow: 24,
+            borderRadius: "1rem",
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p id="resume-popup-description" style={{ fontSize: "18px", marginBottom: "25px" }}>
+            Click the button below to download my resume.
+          </p>
+          <Button
+            variant="contained"
+            color="primary"
+            href="/resume/Mo-resume.pdf"
+            download
+            sx={{
+              fontSize: "16px",
+              padding: "10px 20px",
+              bgcolor: "rgb(30 64 175)",
+              "&:hover": {
+                bgcolor: "rgb(37 99 235)",
+              },
+            }}
+          >
+            Download
+          </Button>
+        </Box>
+      </Modal>
+
 
       <div>
         <p className="mt-[15%] ml-[25%]">I'M</p>
@@ -119,7 +168,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="w-[60%] rounded-lg shadow-lg transition-all duration-700 ease-in-out"
+            className="w-[60%] rounded-2xl shadow-lg transition-all duration-700 ease-in-out"
             style={{
               position: 'absolute',
               top: '50%',
@@ -208,7 +257,7 @@ export default function Home() {
           >
             {cardItems.map((_, index) => (
               <SwiperSlide key={index} className="mx-1">
-                <div className="w-[320px] h-[490px] cursor-pointer relative flex flex-col bg-gradient-to-r from-indigo-950 to-sky-950 opacity-90 rounded-lg justify-center items-center">
+                <div className="w-[320px] h-[490px] cursor-pointer relative flex flex-col bg-gradient-to-r from-indigo-950 to-sky-950 opacity-90 rounded-2xl justify-center items-center">
                   <div className=" text-center p-4">
                     <h6 className="text-xl font-semibold text-orange-200">
                       Successful Round {index + 1}
