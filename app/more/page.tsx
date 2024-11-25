@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import More from "../../public/assets/pictures/more/more.png";
 import Vector1 from "../../public/assets/pictures/more/Vector1.png";
@@ -16,6 +16,51 @@ const MorePage = () => {
     { name: "Pr", percentage: 45 },
     { name: "Figma", percentage: 20 },
   ];
+
+  const [visible, setVisible] = useState(false);
+  const [animatedPercentages, setAnimatedPercentages] = useState(
+    skills.map(() => 0)
+  );
+
+  useEffect(() => {
+    const section = document.querySelector("#skills-section");
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    if (section) observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (visible) {
+      const intervals = skills.map((skill, index) => {
+        const step = Math.ceil(skill.percentage / 100);
+        return setInterval(() => {
+          setAnimatedPercentages((prev) => {
+            const newPercentages = [...prev];
+            if (newPercentages[index] < skill.percentage) {
+              newPercentages[index] += step;
+            } else {
+              clearInterval(intervals[index]);
+              newPercentages[index] = skill.percentage;
+            }
+            return newPercentages;
+          });
+        }, 40);
+      });
+  
+      return () => intervals.forEach((interval) => clearInterval(interval));
+    }
+  }, [visible, skills]);
+  
 
   return (
     <div className="morepage-container w-[52%] m-24">
@@ -60,7 +105,7 @@ const MorePage = () => {
           </p>
         </div>
 
-        <div className="my-14">
+        <div id="skills-section" className="my-14">
           <h1 className="mb-10 text-red-500 text-5xl font-bold">SKILLS</h1>
 
           <div className="flex justify-around items-center">
@@ -89,13 +134,16 @@ const MorePage = () => {
                       fill="none"
                       strokeLinecap="round"
                       strokeDasharray="100"
-                      strokeDashoffset={100 - skill.percentage}
+                      strokeDashoffset={visible ? 100 - skill.percentage : 100}
+                      style={{
+                        transition: "stroke-dashoffset 2s ease-in-out",
+                      }}
                     />
                   </svg>
 
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-2xl font-bold text-red-500">
-                      {skill.percentage}%
+                      {animatedPercentages[index]}%
                     </span>
                   </div>
                 </div>
@@ -104,7 +152,6 @@ const MorePage = () => {
               </div>
             ))}
           </div>
-
         </div>
 
         <div>
