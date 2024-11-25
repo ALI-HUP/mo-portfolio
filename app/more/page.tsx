@@ -7,6 +7,7 @@ import Vector1 from "../../public/assets/pictures/more/Vector1.png";
 import Vector2 from "../../public/assets/pictures/more/Vector2.png";
 import Skills from "../../public/more-page/Skills parts.png";
 import Signture from "../../public/more-page/signture.png";
+import { Button } from '@mui/material';
 
 const MorePage = () => {
   return (
@@ -69,9 +70,10 @@ const MorePage = () => {
                 I’m also working remotely as an intern for Podscribe, a New <br />
                 York-based company, which has given me valuable experience in a <br />
                 professional setting.
-                  <a href="/" className="text-red-500 underline p-1">
-                  Back
-                  </a>
+                <br />
+                <Button variant="contained" className="my-2 w-40 h-8 text-lg rounded-md" href="/">
+                  BACK
+                </Button>
               </p>
 
               <div className="flex flex-col items-center mt-20">

@@ -186,24 +186,6 @@ export default function Home() {
       <div className="text-md mb-[25%]">
         <p className="mt-[15%] ml-[20%]">I'M</p>
 
-        {/* <div className="flex justify-center my-4">
-          <video
-            src="/assets/mo1.mov"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-[60%] rounded-2xl shadow-lg transition-all duration-700 ease-in-out"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 10,
-            }}
-          />
-        </div> */}
-
         <div className="mt-[10%] ml-[65%] flex">
           <p className="mr-[5px]">A MOTION</p>
           <p className="text-3xl"> DESIGNER</p>
@@ -230,9 +212,10 @@ export default function Home() {
               crucial, as it allowed me to gain both the necessary <br />
               skills and an understanding of how the industry <br />
               works.
-              <a href="/more" className="text-red-500 underline p-1">
-                More
-              </a>
+              <br />
+              <Button variant="contained" className="my-2 w-40 h-8 text-lg rounded-md" href="/more">
+                MORE
+              </Button>
             </p>
 
             <br />
