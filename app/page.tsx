@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Profile from "../public/assets/pictures/profile/profile.png";
-import Vector1 from "../public/assets/pictures/profile/Vector1.png";
-import Vector2 from "../public/assets/pictures/profile/Vector2.png";
+import Profile from "../public/assets/vectores/main/profile.png";
+import Vector1 from "../public/assets/vectores/main/Vector1.png";
+import Vector2 from "../public/assets/vectores/main/Vector2.png";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import Email from "../public/assets/contacts/email.png";
 import Phone from "../public/assets/contacts/phone.png";

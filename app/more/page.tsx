@@ -2,16 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
-import More from "../../public/assets/pictures/more/more.png";
-import Vector1 from "../../public/assets/pictures/more/Vector1.png";
-import Vector2 from "../../public/assets/pictures/more/Vector2.png";
+import More from "../../public/assets/vectores/more/more.png";
+import Vector1 from "../../public/assets/vectores/more/Vector1.png";
+import Vector2 from "../../public/assets/vectores/more/Vector2.png";
 import Signture from "../../public/more-page/signture.png";
 import { Button } from "@mui/material";
 import ProgressCircle from "../../components/ProgressCircle";
 
 const MorePage = () => {
   return (
-    <div className="morepage-container w-[52%] m-24">
+    <div className="bg-div">
+    <div className="morepage-container w-[52%] p-24">
       <div className="text-2xl">
         <div className="relative w-[500px] h-[420px] mt-6">
           <Image
@@ -90,6 +91,7 @@ const MorePage = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
