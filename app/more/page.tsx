@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import More from "../../public/assets/vectores/more/more.png";
 import Vector1 from "../../public/assets/vectores/more/Vector1.png";
 import Vector2 from "../../public/assets/vectores/more/Vector2.png";
 import Signture from "../../public/more-page/signture.png";
 import { Button } from "@mui/material";
+import ProgressCircle from "../../components/ProgressCircle";
 
-const MorePage = () => {
+const MorePage: React.FC = () => {
   const skills = [
     { name: "Ae", percentage: 85 },
     { name: "Ai", percentage: 75 },
@@ -16,50 +17,6 @@ const MorePage = () => {
     { name: "Pr", percentage: 45 },
     { name: "Figma", percentage: 20 },
   ];
-
-  const [visible, setVisible] = useState(false);
-  const [animatedPercentages, setAnimatedPercentages] = useState(
-    skills.map(() => 0)
-  );
-
-  useEffect(() => {
-    const section = document.querySelector("#skills-section");
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-      },
-      { threshold: 0.6 }
-    );
-
-    if (section) observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (visible) {
-      const intervals = skills.map((skill, index) => {
-        const step = Math.ceil(skill.percentage / 50);
-        return setInterval(() => {
-          setAnimatedPercentages((prev) => {
-            const newPercentages = [...prev];
-            if (newPercentages[index] < skill.percentage) {
-              newPercentages[index] += step;
-            } else {
-              clearInterval(intervals[index]);
-              newPercentages[index] = skill.percentage;
-            }
-            return newPercentages;
-          });
-        }, 20);
-      });
-
-      return () => intervals.forEach((interval) => clearInterval(interval));
-    }
-  }, [visible, skills]);
 
   return (
     <div className="bg-div morepage-container p-24">
@@ -109,48 +66,7 @@ const MorePage = () => {
 
           <div className="flex justify-around items-center">
             {skills.map((skill, index) => (
-              <div key={index} className="flex flex-col items-center space-y-4">
-                <div className="relative w-32 h-32">
-                  <svg
-                    className="w-full h-full"
-                    viewBox="0 0 36 36"
-                    style={{ transform: "rotate(-90deg)" }}
-                  >
-                    <circle
-                      cx="18"
-                      cy="18"
-                      r="16"
-                      stroke="#1f2937"
-                      strokeWidth="3.5"
-                      fill="none"
-                    />
-                    <circle
-                      cx="18"
-                      cy="18"
-                      r="16"
-                      stroke="#ef4444"
-                      strokeWidth="3.5"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeDasharray="100"
-                      strokeDashoffset={
-                        visible ? 100 - skill.percentage : 100
-                      }
-                      style={{
-                        transition: "stroke-dashoffset 1s ease-in-out",
-                      }}
-                    />
-                  </svg>
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-red-500">
-                      {animatedPercentages[index]}%
-                    </span>
-                  </div>
-                </div>
-
-                <span className="text-2xl font-bold text-white">{skill.name}</span>
-              </div>
+              <ProgressCircle key={index} skill={skill} />
             ))}
           </div>
         </div>
