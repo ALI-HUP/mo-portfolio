@@ -213,7 +213,7 @@ export default function Home() {
               skills and an understanding of how the industry <br />
               works.
               <br />
-              <Button variant="contained" className="my-2 w-40 h-8 text-lg rounded-md" href="/more">
+              <Button variant="contained" className="my-3 w-40 h-8 text-lg rounded-md" href="/more">
                 MORE
               </Button>
             </p>

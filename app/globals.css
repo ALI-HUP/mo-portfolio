@@ -15,7 +15,7 @@ body {
 .bg-div {
   background-image: url(../public/background/more.jpg);
   background-size: cover;
-  background-position-x: -150px;
+  background-position-x: -1px;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
