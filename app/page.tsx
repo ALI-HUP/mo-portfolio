@@ -23,12 +23,12 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("");
   const [open, setOpen] = useState(false);
   const cardItems = [
-    { title: "Animation" },
-    { title: "Video Editing" },
-    { title: "Motion Design" },
-    { title: "Design" },
-    { title: "Logo Motion" },
-    { title: "Logo" },
+    { title: "Animation", link: "/cards/animation" },
+    { title: "Video Editing", link: "/cards/video-editing" },
+    { title: "Motion Design", link: "/cards/motion-design" },
+    { title: "Design", link: "/cards/design" },
+    { title: "Logo Motion", link: "/cards/logo-motion" },
+    { title: "Logo", link: "/cards/logo" },
   ];
 
   useEffect(() => {

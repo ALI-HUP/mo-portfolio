@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import CardComponent from "./CardComponent";
 
 interface SwiperComponentProps {
-  cardItems: Array<{ title: string }>;
+  cardItems: Array<{ title: string; link: string }>;
 }
 
 const SwiperComponent: React.FC<SwiperComponentProps> = ({ cardItems }) => {
@@ -29,7 +29,7 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({ cardItems }) => {
       >
         {cardItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <CardComponent title={item.title} />
+            <CardComponent title={item.title} link={item.link} />
           </SwiperSlide>
         ))}
       </Swiper>
