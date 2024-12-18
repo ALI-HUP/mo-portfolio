@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Line from "../public/assets/line/line.png";
+import Line1 from "../public/assets/lines/line1.png";
 
 interface CardComponentProps {
   title: string;
@@ -13,8 +13,8 @@ const CardComponent: React.FC<CardComponentProps> = ({ title, link }) => {
     <Link href={link}>
       <div className="relative border-sky-900 border w-[310px] h-[490px] cursor-pointer flex flex-col bg-gradient-to-r from-indigo-950 to-sky-950 rounded-2xl justify-center items-center">
         <Image
-          src={Line}
-          alt="Line"
+          src={Line1}
+          alt="line1"
           className="absolute top-7 left-5 w-20"
         />
         <div className="text-center">

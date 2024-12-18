@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 import { Modal, Box, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import SwiperComponent from "../components/SwiperComponent";
+import Line2 from "../public/assets/lines/line2.png"
 
 
 export default function Home() {
@@ -253,34 +254,49 @@ export default function Home() {
       <div id="contact" className="flex flex-col items-center">
         <div className="flex space-x-56 mb-24">
           <div className="relative" onClick={() => handleCopy("sheikhbahaie.md@gmail.com", "Email address copied!")}>
+            <Image
+              src={Line2}
+              alt="line2"
+              className="absolute top-2 left-1/2 -translate-x-1/2 w-[75px] z-20"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
-            <div className="relative z-10">
+            <div className="relative z-30">
               <Image
                 src={Email}
                 alt="Email-pic"
-                className="p-3 w-28 h-28 border rounded-2xl"
+                className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
           </div>
 
           <div className="relative" onClick={() => handleCopy("09912618098", "Phone number copied!")}>
+            <Image
+              src={Line2}
+              alt="line2"
+              className="absolute top-2 left-1/2 -translate-x-1/2 w-[75px] z-20"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
-            <div className="relative z-10">
+            <div className="relative z-30">
               <Image
                 src={Phone}
                 alt="Phone-pic"
-                className="p-3 w-28 h-28 border rounded-2xl"
+                className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
           </div>
 
           <a href="https://www.linkedin.com/in/mohammad-sheikhbahaei-1824a82a5" target="_blank" rel="noopener noreferrer" className="relative">
+            <Image
+              src={Line2}
+              alt="line2"
+              className="absolute top-2 left-1/2 -translate-x-1/2 w-[75px] z-20"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-neutral-600 opacity-40 rounded-2xl"></div>
-            <div className="relative z-10">
+            <div className="relative z-30">
               <Image
                 src={Linkedin}
                 alt="Linkedin-pic"
-                className="p-3 w-28 h-28 border rounded-2xl"
+                className="p-3 w-32 h-32 border rounded-2xl"
               />
             </div>
           </a>
