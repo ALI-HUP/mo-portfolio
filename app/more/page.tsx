@@ -24,12 +24,12 @@ const MorePage: React.FC = () => {
         <div className="relative w-[500px] h-[420px] mt-6">
           <Image
             src={Vector1}
-            alt="Vector"
+            alt="white-rectangle"
             className="absolute animate-orbit-slow"
           />
           <Image
             src={Vector2}
-            alt="Vector"
+            alt="orange-rectangle"
             className="absolute animate-orbit-slow-reverse"
           />
           <Image

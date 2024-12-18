@@ -229,17 +229,17 @@ export default function Home() {
           <div className="relative w-[500px] h-[500px]">
             <Image
               src={Vector1}
-              alt="Description"
+              alt="orange-circle"
               className="absolute w-[490px] h-[490px] animate-orbit-slow"
             />
             <Image
               src={Vector2}
-              alt="Description"
+              alt="white-circle"
               className="absolute w-[490px] h-[490px] animate-orbit-slow-reverse"
             />
             <Image
               src={Profile}
-              alt="Description"
+              alt="profile-pic"
               className="absolute w-[480px] h-[480px] m-1 rounded-full"
             />
           </div>
@@ -257,7 +257,7 @@ export default function Home() {
             <div className="relative z-10">
               <Image
                 src={Email}
-                alt="Email-Pic"
+                alt="Email-pic"
                 className="p-3 w-28 h-28 border rounded-2xl"
               />
             </div>
@@ -268,7 +268,7 @@ export default function Home() {
             <div className="relative z-10">
               <Image
                 src={Phone}
-                alt="Phone-Pic"
+                alt="Phone-pic"
                 className="p-3 w-28 h-28 border rounded-2xl"
               />
             </div>
@@ -279,7 +279,7 @@ export default function Home() {
             <div className="relative z-10">
               <Image
                 src={Linkedin}
-                alt="Linkedin-Pic"
+                alt="Linkedin-pic"
                 className="p-3 w-28 h-28 border rounded-2xl"
               />
             </div>
