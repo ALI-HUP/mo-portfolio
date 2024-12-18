@@ -8,7 +8,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
 
@@ -95,4 +94,11 @@ body {
   background-color: rgba(255, 255, 255, 1);
   width: 10px;
   height: 10px;
+}
+
+@font-face {
+  font-family: "YatraOne";
+  src: url("/font/YatraOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
