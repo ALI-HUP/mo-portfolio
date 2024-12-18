@@ -8,6 +8,7 @@ import Vector2 from "../../public/assets/vectores/more/Vector2.png";
 import Signture from "../../public/more-page/signture.png";
 import { Button } from "@mui/material";
 import ProgressCircle from "../../components/ProgressCircle";
+import Line1 from "../../public/assets/lines/line1.png";
 
 const MorePage: React.FC = () => {
   const skills = [
@@ -21,7 +22,7 @@ const MorePage: React.FC = () => {
   return (
     <div className="bg-div morepage-container p-24">
       <div className="text-2xl">
-        <div className="relative w-[500px] h-[420px] mt-6">
+      <div className="relative w-[500px] h-[420px] mt-6">
           <Image
             src={Vector1}
             alt="white-rectangle"
@@ -36,6 +37,11 @@ const MorePage: React.FC = () => {
             src={More}
             alt="Mo-pic"
             className="absolute w-[470px] h-[330px] m-3"
+          />
+          <Image
+            src={Line1}
+            alt="line"
+            className="absolute w-28 top-44 -right-28 rotate-90"
           />
         </div>
 
@@ -61,7 +67,15 @@ const MorePage: React.FC = () => {
           </p>
         </div>
 
-        <div id="skills-section" className="my-14 w-[800px]">
+        <div>
+          <Image
+              src={Line1}
+              alt="line"
+              className="my-12"
+            />
+        </div>
+
+        <div id="skills-section" className="my-12 w-[800px]">
           <h1 className="mb-10 text-red-500 text-5xl font-bold">SKILLS</h1>
 
           <div className="flex justify-around items-center">
@@ -69,6 +83,14 @@ const MorePage: React.FC = () => {
               <ProgressCircle key={index} skill={skill} />
             ))}
           </div>
+        </div>
+
+        <div className="flex justify-end">
+          <Image
+            src={Line1}
+            alt="line"
+            className="mb-12 mr-[550px]"
+          />
         </div>
 
         <div>
