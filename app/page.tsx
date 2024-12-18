@@ -89,30 +89,30 @@ export default function Home() {
           : "w-[85%]"
         } p-3 flex justify-between items-center fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-1000`}
       >
-        <h1 className="text-3xl p-2">Portfolio</h1>
+        <h1 className="text-3xl p-2 font-extrabold">Portfolio</h1>
 
         <div className="text-xl space-x-10 p-2">
           <span
             onClick={() => scrollToSection("about")}
-            className={activeSection === "about" ? "text-red-500" : ""}
+            className={activeSection === "about" ? "text-red-500 font-black drop-shadow-2xl" : ""}
           >
             About
           </span>
           <span
             onClick={() => scrollToSection("projects")}
-            className={activeSection === "projects" ? "text-red-500" : ""}
+            className={activeSection === "projects" ? "text-red-500 font-black drop-shadow-2xl" : ""}
           >
             Projects
           </span>
           <span
             onClick={() => scrollToSection("contact")}
-            className={activeSection === "contact" ? "text-red-500" : ""}
+            className={activeSection === "contact" ? "text-red-500 font-black drop-shadow-2xl" : ""}
           >
             Contact
           </span>
           <span
             onClick={() => setOpen(true)}
-            className={activeSection === "resume" ? "text-red-500" : ""}
+            className={activeSection === "resume" ? "text-red-500 font-black drop-shadow-2xl" : ""}
           >
             Resume
           </span>
