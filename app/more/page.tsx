@@ -57,10 +57,10 @@ const MorePage: React.FC = () => {
             skills.
             <br /> <br />
             I’ve since become proficient in a range of creative tools, including <br />
-            Adobe After Effects, Illustrator, Photoshop, Premiere Pro, and Figma.{" "}
+            Adobe After Effects, Illustrator, Photoshop, Premiere Pro, and Figma.
             <br />
             Recently, I’ve also started learning Blender to further expand my <br />
-            capabilities. My goal is to one day work as a visual effects artist in{" "}
+            capabilities. My goal is to one day work as a visual effects artist in
             <br />
             Hollywood, where I can contribute to the creation of stunning, <br />
             cinematic experiences.
@@ -97,14 +97,14 @@ const MorePage: React.FC = () => {
           <p>
             Beyond my professional interests, I’m an avid sports enthusiast,
             with a <br />
-            love for badminton, soccer, ping pong, and chess. Everything related{" "}
+            love for badminton, soccer, ping pong, and chess. Everything related
             <br />
             to art also sparks my curiosity, from music and movies to theater
             and <br />
             painting. <br /> <br />
             Along the way, I’ve achieved personal milestones. I’ve earned
             medals <br />
-            in both badminton and soccer, showcasing my dedication to sports.{" "}
+            in both badminton and soccer, showcasing my dedication to sports.
             <br />
             I’m also working remotely as an intern for Podscribe, a New <br />
             York-based company, which has given me valuable experience in a <br />
