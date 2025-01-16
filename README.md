@@ -10,4 +10,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-in chat GPT you can get help fron this chat: https://chatgpt.com/c/67507d04-fbc0-800b-8879-b465b8e50637
+In chat-GPT you can get help from this chat: https://chatgpt.com/c/67507d04-fbc0-800b-8879-b465b8e50637
