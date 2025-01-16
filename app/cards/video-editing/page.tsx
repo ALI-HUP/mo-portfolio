@@ -2,11 +2,13 @@ import React from "react";
 
 const VideoEditing: React.FC = () => {
   return (
-    <div className="p-10">
-      <h1 className="text-4xl font-bold">Video Editing</h1>
-      <p className="mt-4 text-lg">
-        This is the page where you can showcase details about video editing.
-      </p>
+    <div className="w-[90%] bg-div morepage-container p-24">
+      <h1
+        className="text-5xl font-bold text-orange-200"
+        style={{ fontFamily: "YatraOne" }}
+      >
+        Video Editing
+      </h1>
     </div>
   );
 };
